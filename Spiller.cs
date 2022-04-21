@@ -1,5 +1,3 @@
-using System;
-
 namespace KrydsOgBolle
 {
 
@@ -9,31 +7,36 @@ namespace KrydsOgBolle
 
         // privat felt
         string _navn;
-        //string _brikTildelt;
+        public static string brikTildelt;
         //Brik enBrik = new Brik();
 
         public Spiller(string navn, string brik)
         {
-            _navn = navn;
+            //_navn = navn;
             bool brikVaelger = true;
+
+            _navn = Brik.Kryds;
 
             while (brikVaelger)
             {
-                if (string.Equals(brik, "X", StringComparison.CurrentCultureIgnoreCase))
+                /*if (string.Equals(Brik.Kryds, "X", StringComparison.CurrentCultureIgnoreCase))
                 {
                     //Console.WriteLine("I if-løkken kryds");
-                    //Brik.Kryds;
+                    Brik.Kryds;
                     brikVaelger = false;
                 }
-                else if (string.Equals(brik, "O", StringComparison.CurrentCultureIgnoreCase))
+                else if (string.Equals(Brik.Bolle, "O", StringComparison.CurrentCultureIgnoreCase))
                 {
                     //Console.WriteLine("I if-løkken bolle");
-                    //Brik.Bolle;
+                    //brikTildelt = Brik.Bolle;
                     brikVaelger = false;
                 }
                 else
+                {
                     Console.WriteLine("Det var et ugyldigt valg...");
-                brikVaelger = false;
+                    brikVaelger = false;
+                }*/
+
 
             }
 
@@ -55,20 +58,20 @@ namespace KrydsOgBolle
 
         }
 
-        /*public string Brik 
+        public string Brik
         {
 
-          get
-          {
-            return _brikTildelt;
-          }
+            get
+            {
+                return brikTildelt;
+            }
 
-          set
-          {
-            _brikTildelt = value;   
-          }
+            set
+            {
+                brikTildelt = value;
+            }
 
-        }*/
+        }
 
     }
 

@@ -22,9 +22,8 @@ namespace KrydsOgBolle
                 Menu = VisMenu();
             }
 
-
         }
-        //Github-test...
+
         public static bool VisMenu()
         {
             //Console.Clear();

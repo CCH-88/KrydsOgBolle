@@ -2,10 +2,10 @@ namespace KrydsOgBolle
 {
 
     //Model: Håndterer og administrerer data. F.eks. et array som "Braet-klassen"
-    public static class Brik
+    public class Brik
     {
         // privat felt
-        private static string _kryds = "X";
+        static string _kryds = "X";
 
         public static string Kryds
         {
@@ -13,16 +13,26 @@ namespace KrydsOgBolle
             {
                 return _kryds;
             }
+
+            set
+            {
+                _kryds = value;
+            }
         }
 
         // privat felt
-        private static string _bolle = "O";
+        static string _bolle = "O";
 
         public static string Bolle
         {
             get
             {
                 return _bolle;
+            }
+
+            set
+            {
+                _bolle = value;
             }
         }
 
