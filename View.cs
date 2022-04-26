@@ -1,4 +1,5 @@
 using System;
+using KrydsOgBolle;
 
 namespace KrydsOgBolle
 {
@@ -8,11 +9,11 @@ namespace KrydsOgBolle
     {
         public static void Main(string[] args)
         {
-            /*Brik enBrik = new Brik();
+            Brik enBrik = new Brik();
 
             Braet etBraet = new Braet();
-            etBraet.saetBrik(1,1,enBrik.Kryds);
-            etBraet.printBraet(); */
+            //etBraet.saetBrik(1,1,enBrik.Kryds);
+            etBraet.printBraet();
 
 
             bool Menu = true;

@@ -1,3 +1,5 @@
+using System;
+
 namespace KrydsOgBolle
 {
 
@@ -16,6 +18,7 @@ namespace KrydsOgBolle
             bool brikVaelger = true;
 
             _navn = Brik.Kryds;
+
 
             while (brikVaelger)
             {
