@@ -9,7 +9,7 @@ public class Spiller
 
     // privat felt
     string _navn;
-    public string brikTildelt;
+    public static string brikTildelt;
 
     public Spiller(string navn, string brik)
     {
@@ -54,7 +54,7 @@ public class Spiller
 
     }
 
-    /*public string Brik
+    public string SeBrik
     {
 
         get
@@ -67,7 +67,7 @@ public class Spiller
             brikTildelt = value;
         }
 
-    }*/
+    }
 
 }
 
