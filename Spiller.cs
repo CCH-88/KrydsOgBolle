@@ -18,13 +18,13 @@ public class Spiller
 
         while (brikVaelger)
         {
-            if (string.Equals(Brik.Kryds, "X", StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(brik, "X", StringComparison.CurrentCultureIgnoreCase))
             {
                 //Console.WriteLine("I if-løkken kryds");
                 brikTildelt = Brik.Kryds;
                 brikVaelger = false;
             }
-            else if (string.Equals(Brik.Bolle, "O", StringComparison.CurrentCultureIgnoreCase))
+            else if (string.Equals(brik, "O", StringComparison.CurrentCultureIgnoreCase))
             {
                 //Console.WriteLine("I if-løkken bolle");
                 brikTildelt = Brik.Bolle;
@@ -38,6 +38,54 @@ public class Spiller
         }
     }
 
+
+    public Spiller LavSpiller(Spiller spillerEt)
+    {
+        //Find ud af en bedre løsning for den her...
+        Spiller? spillerTo = null;
+
+        switch (spillerEt.SeBrik)
+        {
+            case "O":
+
+                if (string.Equals(spillerEt.SeBrik, "O", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    spillerTo = new Spiller("Hal1000", "X");
+
+                    //Console.Write("\nNavn på spiller to er " + spillerTo.Navn);
+                    //Console.Write(" og  den har brikken: " + spillerTo.SeBrik + " /n");
+
+                    return spillerTo;
+                }
+                else
+                {
+                    return spillerTo;
+
+                }
+
+            case "X":
+
+                if (string.Equals(spillerEt.SeBrik, "X", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    spillerTo = new Spiller("Hal1000", "O");
+
+                    //Console.Write("\nNavn på spiller to er " + spillerTo.Navn);
+                    //Console.Write(" og den har brikken: " + spillerTo.SeBrik + "/n");
+
+                    return spillerTo;
+
+                }
+                else
+                {
+                    return spillerTo;
+                }
+
+            default:
+                Console.WriteLine("Ikke en gyldig brik");
+                return spillerTo;
+
+        }
+    }
 
     public string Navn
     {
@@ -59,11 +107,13 @@ public class Spiller
 
         get
         {
+            brikTildelt = brikTildelt.ToUpper();
             return brikTildelt;
         }
 
         set
         {
+            brikTildelt = brikTildelt.ToUpper();
             brikTildelt = value;
         }
 

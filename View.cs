@@ -5,12 +5,7 @@ public class View
     public static void Main(string[] args)
     {
 
-        Brik enBrik = new Brik();
-        Braet etBraet = new Braet();
 
-        //etBraet.saetBrik(1,1,enBrik.Kryds); 
-
-        etBraet.PrintBraet();
 
         bool Menu = true;
 
@@ -43,13 +38,11 @@ public class View
                     inputNavn = Console.ReadLine();
 
                 }
-
-                //returns true if null or empty      
-
                 while (string.IsNullOrEmpty(inputNavn));
 
                 string inputBrik;
 
+                //returns true (redos the loop) if null or empty 
                 do
                 {
 
@@ -57,34 +50,15 @@ public class View
                     inputBrik = Console.ReadLine();
 
                 }
-
                 while (string.IsNullOrEmpty(inputBrik));
 
                 Spiller spillerEt = new Spiller(inputNavn, inputBrik);
-
                 Spiller spillerTo;
 
-                /*if(string.Equals(spillerEt.Brik, "O", StringComparison.CurrentCultureIgnoreCase))       
+                spillerTo = spillerEt.LavSpiller(spillerEt);
 
-                {       
+                Console.WriteLine("\nSpiller to's brik er: " + spillerTo.SeBrik);
 
-                  spillerTo = new Spiller ("Hal1000", "X"); 
-
-                   //Console.Write("\nNavn på spiller to er " + spillerTo.Navn);      
-
-                  //Console.Write(" og  den har brikken: " + spillerTo.Brik/n);       
-                } 
-  
-                else if(string.Equals(spillerEt.Brik, "X", StringComparison.CurrentCultureIgnoreCase))       
-
-                {       
-                  spillerTo = new Spiller ("Hal1000", "O"); 
-
-                  //Console.Write("\nNavn på spiller to er " + spillerTo.Navn);      
-
-                  //Console.Write(" og den har brikken: " + spillerTo.Brik/n);       
-
-                }*/
 
                 /*Braet etBraet = new Braet(); 
 
