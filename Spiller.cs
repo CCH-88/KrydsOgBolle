@@ -50,7 +50,7 @@ public class Spiller
 
                 if (string.Equals(spillerEt.SeBrik, "O", StringComparison.CurrentCultureIgnoreCase))
                 {
-                    spillerTo = new Spiller("Hal1000", "X");
+                    spillerTo = new Spiller("Hal 9000", "X");
 
                     //Console.Write("\nNavn på spiller to er " + spillerTo.Navn);
                     //Console.Write(" og  den har brikken: " + spillerTo.SeBrik + " /n");
@@ -67,7 +67,7 @@ public class Spiller
 
                 if (string.Equals(spillerEt.SeBrik, "X", StringComparison.CurrentCultureIgnoreCase))
                 {
-                    spillerTo = new Spiller("Hal1000", "O");
+                    spillerTo = new Spiller("Hal 9000", "O");
 
                     //Console.Write("\nNavn på spiller to er " + spillerTo.Navn);
                     //Console.Write(" og den har brikken: " + spillerTo.SeBrik + "/n");

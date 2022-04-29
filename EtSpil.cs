@@ -4,7 +4,7 @@ namespace KrydsOgBolle;
 public class EtSpil
 {
 
-    public EtSpil()
+    public EtSpil(Spiller spillerEt, Spiller spillerTo, Braet etBraet)
     {
 
     }

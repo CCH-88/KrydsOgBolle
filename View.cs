@@ -4,16 +4,12 @@ public class View
 {
     public static void Main(string[] args)
     {
-
-
-
         bool Menu = true;
 
         while (Menu)
         {
             Menu = VisMenu();
         }
-
     }
 
     public static bool VisMenu()
@@ -46,25 +42,24 @@ public class View
                 do
                 {
 
-                    Console.WriteLine("\nVælg venligst en brik");
+                    Console.WriteLine("\nVælg venligst en brik, " + inputNavn);
                     inputBrik = Console.ReadLine();
 
                 }
                 while (string.IsNullOrEmpty(inputBrik));
 
                 Spiller spillerEt = new Spiller(inputNavn, inputBrik);
-                Spiller spillerTo;
+                Spiller spillerTo = spillerEt.LavSpiller(spillerEt);
 
-                spillerTo = spillerEt.LavSpiller(spillerEt);
+                Console.WriteLine("\nLads os spille! Mit navn er " + spillerTo.Navn + ". Du kan kalde mig Hal, og jeg er blevet tildelt brikken: " + spillerTo.SeBrik);
 
-                Console.WriteLine("\nSpiller to's brik er: " + spillerTo.SeBrik);
+                Console.WriteLine("Spillet bliver igangsat....");
 
+                Braet etBraet = new Braet();
 
-                /*Braet etBraet = new Braet(); 
+                etBraet.SaetBrik(2, 2, Brik.Kryds);
 
-                etBraet.saetBrik(2,2,"O"); 
-
-                etBraet.printBraet();*/
+                etBraet.PrintBraet();
 
                 return true;
 
@@ -76,6 +71,20 @@ public class View
                 Console.WriteLine("\nIkke en gyldig mulighed. Please try again");
                 return true;
         }
+
+    }
+
+    public static bool StartSpil()
+    {
+
+        switch (Console.ReadLine())
+        {
+            case "0":
+                return false;
+            default:
+                return true;
+        }
+
 
     }
 }
