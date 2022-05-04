@@ -38,7 +38,7 @@ public class Braet
         }
     }
 
-    public void SaetBrik(int y, int x, string brik)
+    public bool SaetBrik(int y, int x, string brik)
     {
 
         if (y == 2 || y == 4 || y == 6)
@@ -46,12 +46,17 @@ public class Braet
             if (x == 2 || x == 4 || x == 6)
             {
                 etBraet[y, x] = brik;
+                return true;
             }
+
+            Console.Write("Y-koordinat er OK...\n");
+            return true;
         }
 
         else
         {
-            Console.Write("Not a valid move. Please try again...\n");
+            Console.Write("Ikke et gyldigt træk. Prøv venligst igen...\n");
+            return false;
         }
 
     }

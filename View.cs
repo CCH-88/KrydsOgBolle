@@ -53,13 +53,15 @@ public class View
 
                 Console.WriteLine("\nLads os spille! Mit navn er " + spillerTo.Navn + ". Du kan kalde mig Hal, og jeg er blevet tildelt brikken: " + spillerTo.SeBrik);
 
-                Console.WriteLine("Spillet bliver igangsat....");
+                bool NytSpil = true;
 
-                Braet etBraet = new Braet();
+                while (NytSpil)
+                {
+                    Console.WriteLine("\nSpillet bliver igangsat....\n");
 
-                etBraet.SaetBrik(2, 2, Brik.Kryds);
-
-                etBraet.PrintBraet();
+                    //StartSpil returnerer en bool. Når den returnerer false, så afsluttes while-løkken.
+                    NytSpil = StartSpil();
+                }
 
                 return true;
 
@@ -77,13 +79,38 @@ public class View
     public static bool StartSpil()
     {
 
-        switch (Console.ReadLine())
+        Console.WriteLine("\nIndtast venligst en x- og y-værdi\n");
+
+        Braet etBraet = new Braet();
+        etBraet.PrintBraet();
+
+        while (true)
         {
-            case "0":
-                return false;
-            default:
+            string inputTraek;
+            inputTraek = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(inputTraek))
+            {
+                Console.WriteLine("\nIkke en gyldig x- og y-værdi\n");
+
+                Console.WriteLine("\nIndtast venligst en x- og y-værdi\n");
+
                 return true;
+            }
+            else if (string.Equals(spillerEt.SeBrik, "O", StringComparison.CurrentCultureIgnoreCase))
+            {
+
+            }
         }
+
+        //switch (Console.ReadLine())
+        //{
+        //    case "0":
+
+        //        return true;
+        //    default:
+        //        return true;
+        //}
 
 
     }

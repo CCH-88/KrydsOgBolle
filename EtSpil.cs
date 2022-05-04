@@ -9,6 +9,25 @@ public class EtSpil
 
     }
 
+    public bool GyldigtTraek(int x, int y, string brik, Braet etBraet)
+    {
+
+
+        //Mens tur er "True" for den rette spiller, så skal den spiller prøve at sætte en brik 
+        while (true)
+        {
+            if (etBraet.SaetBrik(x, y, brik))
+            {
+
+                return true;
+
+            }
+
+        }
+
+        return true;
+    }
+
     public bool Tur { get; set; }
 
 
