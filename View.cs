@@ -2,6 +2,7 @@
 
 public class View
 {
+
     public static void Main(string[] args)
     {
         bool Menu = true;
@@ -89,18 +90,7 @@ public class View
             string inputTraek;
             inputTraek = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(inputTraek))
-            {
-                Console.WriteLine("\nIkke en gyldig x- og y-værdi\n");
 
-                Console.WriteLine("\nIndtast venligst en x- og y-værdi\n");
-
-                return true;
-            }
-            else if (string.Equals(spillerEt.SeBrik, "O", StringComparison.CurrentCultureIgnoreCase))
-            {
-
-            }
         }
 
         //switch (Console.ReadLine())

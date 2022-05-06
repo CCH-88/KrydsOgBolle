@@ -25,17 +25,33 @@ public class Braet
 
     public void PrintBraet()
     {
-        int rowLength = etBraet.GetLength(0);
-        int colLength = etBraet.GetLength(1);
+        int yLength = etBraet.GetLength(0);
+        int xLength = etBraet.GetLength(1);
 
-        for (int i = 0; i < rowLength; i++)
+        for (int i = 0; i < yLength; i++)
         {
-            for (int j = 0; j < colLength; j++)
+            for (int j = 0; j < xLength; j++)
             {
                 Console.Write(etBraet[i, j]);
             }
             Console.Write(Environment.NewLine);
         }
+    }
+
+    public Array GetBraet()
+    {
+        return etBraet;
+    }
+
+    public int GetRowLength()
+    {
+        return etBraet.GetLength(0);
+
+    }
+
+    public int GetColLength()
+    {
+        return etBraet.GetLength(1);
     }
 
     public bool SaetBrik(int y, int x, string brik)
