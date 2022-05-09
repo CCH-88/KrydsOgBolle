@@ -2,7 +2,7 @@
 
 public class View
 {
-
+    //Spiller spillerEt;
     public static void Main(string[] args)
     {
         bool Menu = true;
@@ -83,7 +83,8 @@ public class View
         Console.WriteLine("\nIndtast venligst en x- og y-værdi\n");
 
         Braet etBraet = new Braet();
-        etBraet.PrintBraet();
+        Regel kogbRegel = new Regel(etBraet);
+        //etBraet.PrintBraet();
 
         while (true)
         {

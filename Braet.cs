@@ -7,6 +7,8 @@ using KrydsOgBolle;
 //Model: Håndterer og administrerer data. F.eks. et array som "Braet-klassen"
 public class Braet
 {
+    int yLength;
+    int xLength;
     string[,] etBraet;
 
     //Konstruktør som laver et braet. 
@@ -25,8 +27,8 @@ public class Braet
 
     public void PrintBraet()
     {
-        int yLength = etBraet.GetLength(0);
-        int xLength = etBraet.GetLength(1);
+        yLength = etBraet.GetLength(0);
+        xLength = etBraet.GetLength(1);
 
         for (int i = 0; i < yLength; i++)
         {
@@ -38,7 +40,7 @@ public class Braet
         }
     }
 
-    public Array GetBraet()
+    public string[,] GetBraet()
     {
         return etBraet;
     }

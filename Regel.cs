@@ -6,30 +6,33 @@ using System.Threading.Tasks;
 
 namespace KrydsOgBolle
 {
-    internal class Regel
+    public class Regel
     {
         int yBraet;
         int xBraet;
         string spillerBrik;
-        string[,] etBraet;
+        string[,] kogbBraet;
 
         //Indsæt de parametre, som er instances og skal være en del af et spil...
-        Regel(Spiller enSpiller, Braet braetInput)
+        public Regel(Braet braetInput)
         {
-            //Næste skridt: Hvorfor virker denne ikke???
-            etBraet = braetInput.GetBraet();
-            yBraet = braetInput.GetLength(0);
-            xBraet = braetInput.GetLength(1);
-            spillerBrik = enSpiller.SeBrik;
-            //etBraet = new string[laengdeBraet, breddeBraet];
+            //Indsætter parameteren "Braet etBraet = new Braet();" i Regel
+            kogbBraet = braetInput.GetBraet();
 
-            //GyldigtTraek(4,3);
+            //En spillerBrik....
+            //spillerBrik = enSpiller.SeBrik;
+
+            //Ved ikke, om det skal bruges...
+            yBraet = kogbBraet.GetLength(0);
+            xBraet = kogbBraet.GetLength(1);
+
 
 
         }
 
-        public bool GyldigtTraek(int y, int x)
+        public bool GyldigtTraek(Spiller enSpiller, int y, int x)
         {
+            spillerBrik = enSpiller.SeBrik;
 
             //Mens tur er "True" for den rette spiller, så skal den spiller prøve at sætte en brik 
             while (true)
