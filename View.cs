@@ -25,34 +25,6 @@ public class View
         {
 
             case "1":
-                Console.Clear();
-                string inputNavn;
-
-                do
-                {
-
-                    Console.WriteLine("\nIndtast venligst dit navn");
-                    inputNavn = Console.ReadLine();
-
-                }
-                while (string.IsNullOrEmpty(inputNavn));
-
-                string inputBrik;
-
-                //returns true (redos the loop) if null or empty 
-                do
-                {
-
-                    Console.WriteLine("\nVælg venligst en brik, " + inputNavn);
-                    inputBrik = Console.ReadLine();
-
-                }
-                while (string.IsNullOrEmpty(inputBrik));
-
-                Spiller spillerEt = new Spiller(inputNavn, inputBrik);
-                Spiller spillerTo = spillerEt.LavSpiller(spillerEt);
-
-                Console.WriteLine("\nLads os spille! Mit navn er " + spillerTo.Navn + ". Du kan kalde mig Hal, og jeg er blevet tildelt brikken: " + spillerTo.SeBrik);
 
                 bool NytSpil = true;
 
@@ -79,30 +51,63 @@ public class View
 
     public static bool StartSpil()
     {
-
-        Console.WriteLine("\nIndtast venligst en x- og y-værdi\n");
-
+        //Braet og regeler objekter laves og initialiseres...      
         Braet etBraet = new Braet();
         Regel kogbRegel = new Regel(etBraet);
-        //etBraet.PrintBraet();
+
+
+        //Spillere objekter laves...
+        Spiller spillerEt;
+        Spiller spillerTo;
+
+        //inputvariabler til Console.Readline...
+        string inputNavn;
+        string inputBrik;
+        int inputX;
+        int inputY;
+
+        Console.Clear();
+        do
+        {
+
+            Console.WriteLine("\nIndtast venligst dit navn");
+            inputNavn = Console.ReadLine();
+
+        }
+        while (string.IsNullOrEmpty(inputNavn));
+
+
+        //returns true (redos the loop) if null or empty 
+        do
+        {
+
+            Console.WriteLine("\nVælg venligst en brik, " + inputNavn);
+            inputBrik = Console.ReadLine();
+
+        }
+        while (string.IsNullOrEmpty(inputBrik));
+
+
+        //Spillerne laves og spiller to findes ud fra valg af brik af spiller et.
+        spillerEt = new Spiller(inputNavn, inputBrik);
+        spillerTo = spillerEt.LavSpiller(spillerEt);
+
+        Console.WriteLine("\nLads os spille! Mit navn er " + spillerTo.Navn + ". Du kan kalde mig Hal, og jeg er blevet tildelt brikken: " + spillerTo.SeBrik);
 
         while (true)
         {
-            string inputTraek;
-            inputTraek = Console.ReadLine();
+            //etBraet.PrintBraet();
 
+            Console.WriteLine("\nIndtast en x-værdi. Et tal mellem 1 og 3");
 
+            inputX = Console.ReadLine();
+
+            Console.WriteLine("\nIndtast en y-værdi. Et tal mellem 1 og 3");
+
+            inputY = Console.ReadLine();
+
+            kogbRegel.GyldigtTraek(spillerEt, inputY, inputX);
         }
-
-        //switch (Console.ReadLine())
-        //{
-        //    case "0":
-
-        //        return true;
-        //    default:
-        //        return true;
-        //}
-
 
     }
 }
