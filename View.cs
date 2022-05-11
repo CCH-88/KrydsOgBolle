@@ -63,8 +63,10 @@ public class View
         //inputvariabler til Console.Readline...
         string inputNavn;
         string inputBrik;
-        int inputX;
+        string inputXogY;
+        string[] inputMove;
         int inputY;
+        int inputX;
 
         Console.Clear();
         do
@@ -96,17 +98,35 @@ public class View
 
         while (true)
         {
-            //etBraet.PrintBraet();
+            etBraet.PrintBraet();
 
-            Console.WriteLine("\nIndtast en x-værdi. Et tal mellem 1 og 3");
+            Console.WriteLine("\nIndtast to tal mellem 1 og 3 separeret med et ','. For eksempel: '3,4'.");
 
-            inputX = Console.ReadLine();
+            inputXogY = Console.ReadLine();
+            inputMove = inputXogY.Split(',');
 
-            Console.WriteLine("\nIndtast en y-værdi. Et tal mellem 1 og 3");
+            try
+            {
+                inputX = Int32.Parse(inputMove[0]);
+                inputY = Int32.Parse(inputMove[1]);
 
-            inputY = Console.ReadLine();
+                if (inputX != 0 || inputY != 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("Den indtastede værdi er ugyldig. Prøv igen...");
+                }
 
-            kogbRegel.GyldigtTraek(spillerEt, inputY, inputX);
+
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+
+            }
+
         }
 
     }
