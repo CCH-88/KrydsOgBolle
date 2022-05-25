@@ -26,8 +26,6 @@ namespace KrydsOgBolle
             yBraet = kogbBraet.GetLength(0);
             xBraet = kogbBraet.GetLength(1);
 
-
-
         }
 
         public bool GyldigtTraek(Spiller enSpiller, int y, int x)

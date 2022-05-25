@@ -105,14 +105,69 @@ public class View
             inputXogY = Console.ReadLine();
             inputMove = inputXogY.Split(',');
 
+            inputX = Int32.Parse(inputMove[0]);
+            inputY = Int32.Parse(inputMove[1]);
+
+
+            // Næste skridt: få den til at fungere. Lave stadigvæk out of bounds...
+            do
+            {
+                if (inputX == 1)
+                {
+                    inputX = 2;
+                    return false;
+                }
+                else if (inputX == 2)
+                {
+                    inputX = 4;
+                    return false;
+                }
+                else if (inputX == 3)
+                {
+                    inputX = 6;
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("Ikke en gyldig værdi. Indtast et tal mellem 1 og 3. Prøv igen...");
+                    return true;
+                }
+            }
+            while (true);
+
+            do
+            {
+                if (inputY == 1)
+                {
+                    inputY = 2;
+                    return false;
+                }
+                else if (inputY == 2)
+                {
+                    inputY = 4;
+                    return false;
+                }
+                else if (inputY == 3)
+                {
+                    inputY = 6;
+                    return false;
+                }
+                else
+                {
+                    Console.WriteLine("Ikke en gyldig værdi. Indtast et tal mellem 1 og 3. Prøv igen...");
+                    return true;
+                }
+            }
+            while (true);
+
             try
             {
-                inputX = Int32.Parse(inputMove[0]);
-                inputY = Int32.Parse(inputMove[1]);
 
-                if (inputX != 0 || inputY != 0)
+                if (!String.IsNullOrEmpty(inputX.ToString()) || !String.IsNullOrEmpty(inputY.ToString()))
                 {
-                    return false;
+                    etBraet.SaetBrik(inputX, inputY, spillerEt.SeBrik);
+                    etBraet.PrintBraet();
+                    //return false;
                 }
                 else
                 {
