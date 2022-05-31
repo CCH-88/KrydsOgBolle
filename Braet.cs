@@ -17,7 +17,7 @@ public class Braet
         //Et 2D string-array med 4x4 "[y,x]"...
         etBraet = new string[4, 8]
         {
-      { "   "," ","1"," ","2"," ","3"," "},
+      { "(Y)"," ","1"," ","2"," ","3"," (X)"},
       { " 1 ","|"," ","|"," ","|"," ","|"},
       { " 2 ","|"," ","|"," ","|"," ","|"},
       { " 3 ","|"," ","|"," ","|"," ","|"},
@@ -56,18 +56,19 @@ public class Braet
         return etBraet.GetLength(1);
     }
 
-    public bool SaetBrik(int y, int x, string brik)
+    public bool SaetBrik(int x, int y, string brik)
     {
-
-        if (y == 2 || y == 4 || y == 6)
+        //Maks x-værdi: 7. Gyldige værdier: 1,3,5 og 2,4,6
+        if (x == 1 || x == 3 || x == 5 || x == 2 || x == 4 || x == 6)
         {
-            if (x == 2 || x == 4 || x == 6)
+            //Maks y-værdi: 3. Gyldige værdier: 0,1,2,3.
+            if (y == 0 || y == 1 || y == 2 || y == 3)
             {
                 etBraet[y, x] = brik;
                 return true;
             }
 
-            Console.Write("Y-koordinat er OK...\n");
+            //Console.Write("Y-koordinat er OK...\n");
             return true;
         }
 

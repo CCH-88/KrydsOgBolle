@@ -100,73 +100,47 @@ public class View
         {
             etBraet.PrintBraet();
 
-            Console.WriteLine("\nIndtast to tal mellem 1 og 3 separeret med et ','. For eksempel: '3,4'.");
+            Console.WriteLine("\nIndtast to tal mellem 1 og 3 separeret med et ',' i rækkefølgen x,y. For eksempel: '3,3'.");
+
+            // Næste skridt: få brugeren til at prøve igen, hvis den sender en exception. Er der overhovedet brug for en exception handling jf. artiklen?
+            // Måske kan du nøjes med at bruge default... i så fald skal du bare sørge for, at programmet ikke crasher...            
+            /* https://kumarashwinhubert.com/10-exception-handling-best-practices-in-csharp */
 
             inputXogY = Console.ReadLine();
             inputMove = inputXogY.Split(',');
 
-            inputX = Int32.Parse(inputMove[0]);
-            inputY = Int32.Parse(inputMove[1]);
+
+            inputX = int.Parse(inputMove[0]);
+            inputY = int.Parse(inputMove[1]);
 
 
-            // Næste skridt: få den til at fungere. Lave stadigvæk out of bounds...
-            do
-            {
-                if (inputX == 1)
-                {
-                    inputX = 2;
-                    return false;
-                }
-                else if (inputX == 2)
-                {
-                    inputX = 4;
-                    return false;
-                }
-                else if (inputX == 3)
-                {
-                    inputX = 6;
-                    return false;
-                }
-                else
-                {
-                    Console.WriteLine("Ikke en gyldig værdi. Indtast et tal mellem 1 og 3. Prøv igen...");
-                    return true;
-                }
-            }
-            while (true);
-
-            do
-            {
-                if (inputY == 1)
-                {
-                    inputY = 2;
-                    return false;
-                }
-                else if (inputY == 2)
-                {
-                    inputY = 4;
-                    return false;
-                }
-                else if (inputY == 3)
-                {
-                    inputY = 6;
-                    return false;
-                }
-                else
-                {
-                    Console.WriteLine("Ikke en gyldig værdi. Indtast et tal mellem 1 og 3. Prøv igen...");
-                    return true;
-                }
-            }
-            while (true);
 
             try
             {
 
+                //Retter x-værdierne, så de stemmer overens med arrayet...
+                if (inputX == 1 && inputY == 1 || inputY == 2 || inputY == 3)
+                {
+                    inputX = 2;
+                }
+                else if (inputX == 2 && inputY == 1 || inputY == 2 || inputY == 3)
+                {
+                    inputX = 4;
+                }
+                else if (inputX == 3 && inputY == 1 || inputY == 2 || inputY == 3)
+                {
+                    inputX = 6;
+                }
+                else
+                {
+                    Console.WriteLine("Ikke en gyldig x- eller y-værdi. Indtast et tal mellem 1 og 3. Prøv igen...");
+                }
+
+
+                //Tjekker om der er indtastet nogle tal... hvis ja, indsæt parametrene.
                 if (!String.IsNullOrEmpty(inputX.ToString()) || !String.IsNullOrEmpty(inputY.ToString()))
                 {
                     etBraet.SaetBrik(inputX, inputY, spillerEt.SeBrik);
-                    etBraet.PrintBraet();
                     //return false;
                 }
                 else
