@@ -68,13 +68,13 @@ public class Braet
                 return true;
             }
 
-            //Console.Write("Y-koordinat er OK...\n");
-            return true;
+            Console.Write("Y-koordinat er ikke OK...\n");
+            return false;
         }
 
         else
         {
-            Console.Write("Ikke et gyldigt træk. Prøv venligst igen...\n");
+            Console.Write("Ikke en gyldig x-værdi. Prøv venligst igen...\n");
             return false;
         }
 
