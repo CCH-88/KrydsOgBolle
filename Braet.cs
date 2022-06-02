@@ -58,25 +58,45 @@ public class Braet
 
     public bool SaetBrik(int x, int y, string brik)
     {
-        //Maks x-værdi: 7. Gyldige værdier: 1,3,5 og 2,4,6
-        if (x == 1 || x == 3 || x == 5 || x == 2 || x == 4 || x == 6)
+        //Maks x-værdi: 7. Gyldige værdier: 2,4,6
+        if (x == 1 || x == 2 || x == 3)
         {
-            //Maks y-værdi: 3. Gyldige værdier: 0,1,2,3.
-            if (y == 0 || y == 1 || y == 2 || y == 3)
+            //Retter x-værdierne, så de stemmer overens med arrayet.
+            if (x == 1)
+            {
+                x = 2;
+            }
+            else if (x == 2)
+            {
+                x = 4;
+            }
+            else if (x == 3)
+            {
+                x = 6;
+            }
+            else
+            {
+                Console.WriteLine("X-værdi er ikke gyldig. Prøv igen...");
+            }
+
+            //Maks y-værdi: 3. Gyldige værdier: 1,2,3.
+            if (y == 1 || y == 2 || y == 3)
             {
                 etBraet[y, x] = brik;
                 return true;
             }
 
-            Console.Write("Y-koordinat er ikke OK...\n");
+            Console.Write("Y-værdi ikke gyldig.\n");
             return false;
         }
 
         else
         {
-            Console.Write("Ikke en gyldig x-værdi. Prøv venligst igen...\n");
+            Console.Write("Ikke en gyldig værdi.\n");
             return false;
         }
+
+
 
     }
 

@@ -114,42 +114,18 @@ public class View
                 inputMove = inputXogY.Split(',');
             }
 
-            //Retter x-værdierne, så de stemmer overens med arrayet... Kan laves om til en metode regel f.eks....Indkapsling...
-            if (inputX == 1)
+
+            //Tjekker om der er indtastet nogle tal... hvis ja, indsæt parametrene.
+            if (!string.IsNullOrEmpty(inputX.ToString()) || !string.IsNullOrEmpty(inputY.ToString()))
             {
-                inputX = 2;
+                etBraet.SaetBrik(inputX, inputY, spillerEt.SeBrik);
             }
-            else if (inputX == 2)
+            else
             {
-                inputX = 4;
-            }
-            else if (inputX == 3)
-            {
-                inputX = 6;
+                Console.WriteLine("Den indtastede værdi er ugyldig. Prøv igen...");
             }
 
-            //etBraet.PrintBraet();
 
-            try
-            {
-
-                //Tjekker om der er indtastet nogle tal... hvis ja, indsæt parametrene.
-                if (!string.IsNullOrEmpty(inputX.ToString()) || !string.IsNullOrEmpty(inputY.ToString()))
-                {
-                    etBraet.SaetBrik(inputX, inputY, spillerEt.SeBrik);
-                }
-                else
-                {
-                    Console.WriteLine("Den indtastede værdi er ugyldig. Prøv igen...");
-                }
-
-
-            }
-            catch (FormatException e)
-            {
-                Console.WriteLine(e.Message);
-
-            }
 
         }
 
