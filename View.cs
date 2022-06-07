@@ -76,18 +76,41 @@ public class View
             inputNavn = Console.ReadLine();
 
         }
-        while (string.IsNullOrEmpty(inputNavn));
+        while (string.IsNullOrEmpty(inputNavn) || string.IsNullOrWhiteSpace(inputNavn));
 
 
-        //returns true (redos the loop) if null or empty 
-        do
+        //returns true (redos the loop) if null, empty or white space
+        Console.WriteLine("\nVælg venligst en brik, " + inputNavn);
+
+        bool validBrik = true;
+
+        //Prøv at få den til at fungere....
+        while (validBrik)
         {
 
-            Console.WriteLine("\nVælg venligst en brik, " + inputNavn);
             inputBrik = Console.ReadLine();
 
+            if (string.Equals(inputBrik, "X", StringComparison.OrdinalIgnoreCase))
+            {
+                inputBrik = "X";
+                validBrik = false;
+            }
+            else if (string.Equals(inputBrik, "O", StringComparison.OrdinalIgnoreCase))
+            {
+                inputBrik = "O";
+                validBrik = false;
+            }
+            else if (string.IsNullOrEmpty(inputBrik) || string.IsNullOrWhiteSpace(inputBrik))
+            {
+                inputBrik = Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("\nPrøv igen, " + inputNavn + ". Den valgte brik skal enten være X (kryds) eller O (bolle)");
+                inputBrik = Console.ReadLine();
+            }
+
         }
-        while (string.IsNullOrEmpty(inputBrik));
 
 
         //Spillerne laves og spiller to findes ud fra valg af brik af spiller et.
