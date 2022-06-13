@@ -84,11 +84,11 @@ public class View
 
         bool validBrik = true;
 
+        inputBrik = Console.ReadLine();
+
         //Prøv at få den til at fungere....
         while (validBrik)
         {
-
-            inputBrik = Console.ReadLine();
 
             if (string.Equals(inputBrik, "X", StringComparison.OrdinalIgnoreCase))
             {
@@ -102,6 +102,7 @@ public class View
             }
             else if (string.IsNullOrEmpty(inputBrik) || string.IsNullOrWhiteSpace(inputBrik))
             {
+                Console.WriteLine("\nPrøv igen, " + inputNavn + ". Den valgte brik skal enten være X (kryds) eller O (bolle)");
                 inputBrik = Console.ReadLine();
             }
             else
