@@ -57,7 +57,7 @@ namespace KrydsOgBolle
 
             }
 
-            return true;
+
         }
     }
 }

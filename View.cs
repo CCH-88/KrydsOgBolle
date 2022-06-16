@@ -43,7 +43,7 @@ public class View
                 return false;
 
             default:
-                Console.WriteLine("\nIkke en gyldig mulighed. Please try again");
+                Console.WriteLine("\nIkke en gyldig mulighed. Prøv venligst igen");
                 return true;
         }
 
@@ -118,13 +118,14 @@ public class View
         spillerEt = new Spiller(inputNavn, inputBrik);
         spillerTo = spillerEt.LavSpiller(spillerEt);
 
-        Console.WriteLine("\nLads os spille! Mit navn er " + spillerTo.Navn + ". Du kan kalde mig Hal, og jeg er blevet tildelt brikken: " + spillerTo.SeBrik);
+        Console.Clear();
+        Console.WriteLine("\nLads os spille, " + spillerEt.Navn + ". Mit navn er " + spillerTo.Navn + ". Du kan kalde mig Hal, og jeg er blevet tildelt brikken: " + spillerTo.SeBrik + "\n");
 
         while (true)
         {
-
             etBraet.PrintBraet();
-            Console.WriteLine("\nIndtast to tal mellem 1 og 3 separeret med et ',' i rækkefølgen x,y. For eksempel: '3,3'.");
+
+            Console.WriteLine("\n" + spillerEt.Navn + ", indtast to tal mellem 1 og 3 separeret med et ',' i rækkefølgen x,y. For eksempel: '3,3'.");
 
             inputXogY = Console.ReadLine();
             inputMove = inputXogY.Split(',');
@@ -148,8 +149,6 @@ public class View
             {
                 Console.WriteLine("Den indtastede værdi er ugyldig. Prøv igen...");
             }
-
-
 
         }
 

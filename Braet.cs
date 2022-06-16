@@ -58,7 +58,7 @@ public class Braet
 
     public bool SaetBrik(int x, int y, string brik)
     {
-        //Maks x-værdi: 7. Gyldige værdier: 2,4,6
+        //Maks x-værdi: 7. Input fra brugeren er enten: 1,2 eller 3.
         if (x == 1 || x == 2 || x == 3)
         {
             //Retter x-værdierne, så de stemmer overens med arrayet.
