@@ -15,6 +15,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Christian Casper Hofma - cchofma@live.dk
 
-Project Link: [https://github.com/CCH-88/ProductRecommender.git](https://github.com/CCH-88/ProductRecommender.git)
+Project Link: https://github.com/CCH-88/KrydsOgBolle
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
